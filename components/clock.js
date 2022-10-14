@@ -20,6 +20,7 @@ function showClock() {
     var today = new Date();
     var hours = today.getHours();
     var minutes = today.getMinutes();
+    var ampm = hours >= 12 ? 'pm' : 'am';
     if (hours < 10) {
         hours = "0" + hours;
     }
@@ -28,7 +29,7 @@ function showClock() {
     }
     // display hour in DOM
     var time = clock.getElementsByClassName('time')[0];
-    time.innerHTML = hours + ":" + minutes;
+    time.innerHTML = hours + ":" + minutes + " " + ampm;
     // timeout on each second
     var t = setTimeout(showClock, 2000);
 
